@@ -1,0 +1,65 @@
+{
+  "name": "labspace-generator",
+  "version": "1.0.0",
+  "description": "Transform any GitHub repository into a complete development environment",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "vite",
+    "dev:server": "nodemon server.js",
+    "build": "vite build",
+    "start": "node server.js",
+    "preview": "vite preview",
+    "test": "jest",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "deploy:vercel": "vercel --prod",
+    "deploy:railway": "railway deploy",
+    "deploy:render": "echo 'Push to GitHub to trigger Render deployment'",
+    "postbuild": "echo 'Build completed successfully!'"
+  },
+  "dependencies": {
+    "@octokit/rest": "^19.0.13",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "compression": "^1.7.4",
+    "archiver": "^6.0.1",
+    "dotenv": "^16.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.292.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.1.1",
+    "vite": "^4.5.0",
+    "tailwindcss": "^3.3.6",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajeetraina/labspace-generator.git"
+  },
+  "keywords": [
+    "github",
+    "labspace",
+    "development-environment",
+    "docker",
+    "devcontainer",
+    "vscode",
+    "automation"
+  ],
+  "author": "Ajeet Singh Raina",
+  "license": "MIT"
+}
